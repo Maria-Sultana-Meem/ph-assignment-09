@@ -18,7 +18,7 @@ const HeroSlider = () => {
      <p className='font-bold text-5xl ml-20'>Keep Your Pets Warm This Winter!</p>
      <p className='  ml-20'>Cozy outfits and blankets for your furry friends.</p>
         </div>
-        <div className=''>
+        <div className='rounded-md w-[400px]'>
             <img
       src="https://i.ibb.co.com/MyV3QwKc/cozy3.jpg"
       className="w-full rounded-full" />
@@ -36,7 +36,7 @@ const HeroSlider = () => {
      <p className='font-bold text-5xl ml-20'>Winter Grooming & Paw Treatments</p>
      <p className='  ml-20'>Moisturizing paw balm and winter-safe grooming.</p>
         </div>
-        <div className='rounded-md'>
+        <div className='rounded-md w-[400px]'>
             <img
       src="https://i.ibb.co.com/ZzCsqSWW/cozy.jpg"
       className="w-full rounded-full" />
@@ -54,7 +54,7 @@ const HeroSlider = () => {
      <p className='font-bold text-5xl ml-20'>Protect your pets' paws and fur during chilly weather.</p>
      <p className=' ml-20'>Ensure your pets stay fit and energetic this season</p>
         </div>
-        <div className='rounded-md'>
+        <div className='rounded-md w-[400px]'>
            <img
       src="https://i.ibb.co.com/sdp9S6Nk/cozy1.jpg"
       className="w-full rounded-full" />
@@ -72,7 +72,7 @@ const HeroSlider = () => {
      <p className='font-bold text-5xl ml-20'>Expert Vets & Winter Tips</p>
      <p className=' ml-20'>Professional advice for pet care in cold weather.</p>
         </div>
-        <div className='rounded-md'>
+        <div className='rounded-md w-[400px]'>
             <img
       src="https://i.ibb.co.com/3yy5sD5Z/cozy2.jpg"
       className="w-full rounded-full" />

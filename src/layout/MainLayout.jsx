@@ -8,7 +8,7 @@ const MainLayout = () => {
         <div>
            <Navbar></Navbar> 
            <div className='bg-blue-50'>
-            <div className='w-10/12 mx-auto h-screen py-20'>
+            <div className='w-10/12 mx-auto  py-20'>
             <Outlet></Outlet>
            </div>
            </div>

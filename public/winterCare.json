@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Keep Them Warm",
+    "description": "Provide cozy blankets, sweaters, or jackets to keep your pets warm during cold days."
+  },
+  {
+    "id": 2,
+    "title": "Limit Outdoor Time",
+    "description": "Avoid long exposure to cold weather. Short walks are better in winter."
+  },
+  {
+    "id": 3,
+    "title": "Winter Grooming",
+    "description": "Regular grooming prevents matting and keeps their coat healthy in cold weather."
+  },
+  {
+    "id": 4,
+    "title": "Protect Paws",
+    "description": "Use paw balm or pet boots to protect their feet from ice, snow, and salt."
+  },
+  {
+    "id": 5,
+    "title": "Hydration & Nutrition",
+    "description": "Ensure pets drink enough water and maintain a nutritious diet to stay energetic."
+  },
+  {
+    "id": 6,
+    "title": "Safe Heating",
+    "description": "Provide safe heating options, like heated beds or pads, but avoid electric cords they can chew."
+  }
+]
