@@ -29,7 +29,7 @@ const ExpertVets = () => {
             <h1 className='font-bold text-center text-4xl mb-6'>Meet Our Expert Vets</h1>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
                 {
-                    experts.map(item=><div className='p-6 bg-blue-100 rounded-md text-center space-y-3'>
+                    experts.map(item=><div key={item.id} className='p-6 bg-blue-100 rounded-md text-center space-y-3'>
                       <div className='flex justify-center'><img src={item.photo} alt="" className='rounded-full w-40 h-40'/></div>
                        <h3 className='font-bold text-blue-800 text-2xl'>{item.name}</h3>
                        <p className='font-semibold'>{item.specialty}</p>

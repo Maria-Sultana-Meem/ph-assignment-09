@@ -3,7 +3,7 @@ import { FaStarHalfAlt } from 'react-icons/fa';
 import { Link } from 'react-router';
 
 const Card = ({item}) => {
-   const {serviceName,image,rating,price,providerName} = item
+   const {serviceName,image,rating,price,providerName,serviceId} = item
     
     return (
         <div>
@@ -17,7 +17,7 @@ const Card = ({item}) => {
 
                 </div>
                 <div className='flex justify-center'>
-                    <Link to='/cardDetails' className='btn bg-cyan-600 text-white cursor-pointer'>View Details</Link>
+                    <Link to={`/cardDetails/${serviceId}`} className='btn bg-cyan-600 text-white cursor-pointer'>View Details</Link>
                 </div>
             </div>
         </div>
