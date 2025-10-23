@@ -8,7 +8,7 @@ import toast from 'react-hot-toast'
 
 const Login = () => {
     const [show,setShow]=useState(false)
-    const {signInWithEmailAndPasswordFunc,user,setUser,googleSignInFunc,sendPassResetEmailFunc}= useContext(AuthContext)
+    const {signInWithEmailAndPasswordFunc,user,setUser,googleSignInFunc,sendPassResetEmailFunc,setLoading}= useContext(AuthContext)
     const location = useLocation();
   const from = location.state || "/";
   const navigate = useNavigate();
@@ -29,6 +29,7 @@ const Login = () => {
           signInWithEmailAndPasswordFunc(email,password)
           .then(res=>{
             console.log(res.user);
+            setLoading(false)
             setUser(res.user);
         toast.success("Signin successful");
          navigate(from);
@@ -62,7 +63,7 @@ const Login = () => {
      
        sendPassResetEmailFunc(email)
        .then(() => {
-        
+        setLoading(false)
         toast.success("Check your email to reset password");
       })
       .catch((e) => {

@@ -5,7 +5,7 @@ import { auth } from '../firebase/firebase.config';
 
 const AuthProvider = ({children}) => {
      const [user, setUser] = useState(null);
-//   const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 const googleProvider = new GoogleAuthProvider()
 
     //  create email passwrod sign up
@@ -21,22 +21,24 @@ const googleProvider = new GoogleAuthProvider()
   };
 //   email password sign in
    const signInWithEmailAndPasswordFunc = (email, password) => {
-   
+   setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
     // google sign in 
 
     const googleSignInFunc =()=>{
+      setLoading(true);
     return signInWithPopup(auth,googleProvider)
 
     }
     // forgot password
     const sendPassResetEmailFunc = (email) => {
-   
+   setLoading(true);
     return sendPasswordResetEmail(auth, email);
   };
     // log out 
     const signoutUserFunc = () => {
+      setLoading(true);
    
     return signOut(auth);
   };
@@ -49,7 +51,9 @@ const googleProvider = new GoogleAuthProvider()
     signInWithEmailAndPasswordFunc,
     googleSignInFunc,
     sendPassResetEmailFunc,
-    signoutUserFunc
+    signoutUserFunc,
+    loading,
+    setLoading,
     }
     useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currUser) => {

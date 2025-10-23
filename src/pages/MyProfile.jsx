@@ -1,21 +1,27 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import toast from 'react-hot-toast';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const MyProfile = () => {
   const {user, updateProfileFunc} = useContext(AuthContext)
   const [editing, setEditing] = useState(false);
   const [name, setName] = useState(user?.displayName || '');
   const [photoURL, setPhotoURL] = useState(user?.photoURL || '');
+ 
   const handleUpdate = async (e) => {
     e.preventDefault();
+   
     try {
       await updateProfileFunc(name, photoURL);
       toast.success('Profile updated successfully!');
       setEditing(false);
+     
     } catch (err) {
       toast.error(err.message);
+      
     }
+    
   };
   return (
     <div className='  py-10 text-center space-y-5 px-6 border w-1/2 mx-auto mt-10 bg-gradient-to-b from-white to to-blue-600'>

@@ -14,6 +14,7 @@ const WinterCare = () => {
               fetchPromise.map(item=><div key={item.id} className='p-6 rounded-md space-y-5 shadow-sm text-center bg-base-200'>
                   <p className='font-bold text-blue-500 text-2xl'>{item.title}</p>   
                   <p>{item.description}</p>   
+                  
 
               </div>)
             }
