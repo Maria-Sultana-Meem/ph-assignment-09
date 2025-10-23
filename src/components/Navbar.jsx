@@ -37,7 +37,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <button className=" text-white hover:scale-110 transition-all duration-300 bg-gradient-to-bl px-6 py-2 rounded-md from-cyan-100 to-cyan-600 ">Register</button>
+    <Link to='/register' className=" text-white hover:scale-110 transition-all duration-300 bg-gradient-to-bl px-6 py-2 rounded-md from-cyan-100 to-cyan-600 ">Register</Link>
   </div>
 </div>
       </div>
