@@ -6,6 +6,7 @@ import MyProfile from "../pages/MyProfile";
 import CardDetails from "../pages/CardDetails";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
  {
@@ -24,12 +25,12 @@ const router = createBrowserRouter([
     },
     {
          path:'/myProfile',
-         Component:MyProfile
+         element:<PrivateRoute><MyProfile></MyProfile></PrivateRoute>
     }
     ,
     {
          path:'/cardDetails/:serviceId',
-         Component:CardDetails,
+         element:<PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
          loader:()=>fetch('/data.json')
     },
     {

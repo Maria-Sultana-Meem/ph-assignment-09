@@ -20,6 +20,7 @@ const Card = ({item}) => {
                     <Link to={`/cardDetails/${serviceId}`} className='btn bg-cyan-600 text-white cursor-pointer'>View Details</Link>
                 </div>
             </div>
+            
         </div>
     );
 };

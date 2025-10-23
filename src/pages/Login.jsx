@@ -1,25 +1,25 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext,  useEffect,  useRef,  useState } from 'react'
 import { FaEye } from 'react-icons/fa'
 import { IoEyeOff } from 'react-icons/io5'
 import { Link, useLocation, useNavigate } from 'react-router'
 import { AuthContext } from '../context/AuthContext'
 import { toast } from 'react-toastify'
 
+
 const Login = () => {
     const [show,setShow]=useState(false)
-    const {signInWithEmailAndPasswordFunc,user,setUser,googleSignInFunc}= useContext(AuthContext)
+    const {signInWithEmailAndPasswordFunc,user,setUser,googleSignInFunc,sendPassResetEmailFunc}= useContext(AuthContext)
     const location = useLocation();
   const from = location.state || "/";
   const navigate = useNavigate();
+  const emailRef = useRef(null)
 
-  if (user) {
-    navigate("/");
-    return;
-  }
 
-  
-
- 
+   useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user, navigate, from]);
 
     const handleSignin=(e)=>{
         e.preventDefault()
@@ -34,14 +34,40 @@ const Login = () => {
          navigate(from);
 
             
-          }).catch(e=>{
-            toast.error(e.message)
           })
+          .catch((e) => {
+      if (e.code === "auth/user-not-found") {
+        toast.error("No user found! Please register first.");
+      } 
+      else if (e.code === "auth/invalid-credential") {
+       
+        if (email && password) {
+          toast.error("No user found! Please register first.");
+        } else {
+          toast.error("Invalid email or password!");
+        }
+      } 
+      else if (e.code === "auth/wrong-password") {
+        toast.error("Wrong password! Try again.");
+      } 
+      else {
+        toast.error(e.message);
+      }
+    });
          
 
     }
     const handleForgetPassword=()=>{
-       
+       const email = emailRef.current.value
+     
+       sendPassResetEmailFunc(email)
+       .then(() => {
+        
+        toast.success("Check your email to reset password");
+      })
+      .catch((e) => {
+        toast.error(e.message);
+      });
        
     }
 
@@ -76,7 +102,7 @@ const Login = () => {
                 <input
                   type="email"
                   name="email"
-                   
+                   ref={emailRef}
                   placeholder="example@email.com"
                   className="input input-bordered w-full bg-white/20 "
                 />
