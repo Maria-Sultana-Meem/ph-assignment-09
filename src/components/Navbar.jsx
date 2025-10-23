@@ -104,11 +104,11 @@ const Navbar = () => {
             {
             user?  <img
                 src={user?.photoURL || "https://via.placeholder.com/88"}
-                className="ml-70 h-[50px] w-[50px] rounded-full mx-auto"
-                alt=""
+                className="h-[50px] w-[50px] rounded-full mx-auto"
+                alt={user?.displayName}
               /> : null
           }
-          <div className="absolute bottom-full top-5  right-0 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity  text-red-500 text-sm px-2 py-1 rounded">
+          <div className="absolute bottom-full top-5  right-0  opacity-0 group-hover:opacity-100 transition-opacity  text-blue-900 text-sm px-2 py-1 rounded">
                   {user?.email}
                 </div>
           </div>
