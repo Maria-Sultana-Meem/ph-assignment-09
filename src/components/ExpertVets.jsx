@@ -27,7 +27,7 @@ const ExpertVets = () => {
     return (
         <div className='py-10'>
             <h1 className='font-bold text-center text-4xl mb-6'>Meet Our Expert Vets</h1>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
+            <div data-aos="zoom-in" className='grid grid-cols-1 md:grid-cols-3 gap-5'>
                 {
                     experts.map(item=><div key={item.id} className='p-6 bg-blue-100 rounded-md text-center space-y-3'>
                       <div className='flex justify-center'><img src={item.photo} alt="" className='rounded-full w-40 h-40'/></div>

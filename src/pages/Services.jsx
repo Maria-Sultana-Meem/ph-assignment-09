@@ -11,7 +11,7 @@ const Services = () => {
   return (
     <div>
         <p className='font-bold text-4xl text-center'>Here Our Services</p>
-         <div className='py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+         <div data-aos="fade-right" className='py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
               {
                 data.map(item=><div key={item.serviceId} >
                  <div className='p-6 rounded-md shadow-sm hover:scale-110 transition ease-in-out bg-base-200 space-y-3'>

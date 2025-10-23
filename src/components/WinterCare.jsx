@@ -9,7 +9,7 @@ const WinterCare = () => {
      <div className='py-10'>
         <h2 className="text-4xl font-bold text-center mb-6">Winter Care Tips for Pets</h2>
      </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+        <div data-aos="fade-left" className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
             {
               fetchPromise.map(item=><div key={item.id} className='p-6 rounded-md space-y-5 shadow-sm text-center bg-base-200'>
                   <p className='font-bold text-blue-500 text-2xl'>{item.title}</p>   

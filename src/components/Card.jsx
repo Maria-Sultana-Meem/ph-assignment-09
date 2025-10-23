@@ -7,7 +7,7 @@ const Card = ({item}) => {
     
     return (
         <div>
-            <div className='p-6 rounded-md shadow-sm hover:scale-110 transition ease-in-out bg-base-200 space-y-3'>
+            <div   data-aos="fade-right" className='p-6 rounded-md shadow-sm hover:scale-110 transition ease-in-out bg-base-200 space-y-3'>
                 <img src={image} alt="" className='h-[200px] w-full rounded-md '/>
                 <p className='font-bold text-xl text-blue-500'>Service name :{serviceName}</p>
                 <p className='font-semibold '>Provider name :{providerName}</p>

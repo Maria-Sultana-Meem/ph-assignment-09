@@ -16,7 +16,7 @@ const HeroSlider = () => {
           </p>
         </Marquee>
       </div>
-      <div className="carousel static w-full bg-gradient-to-b from-white to-blue-600 py-20 rounded-md">
+      <div data-aos="fade-down" className="carousel static w-full bg-gradient-to-b from-white to-blue-600 py-20 rounded-md">
         <div id="slide1" className="carousel-item relative w-full h-[300px]">
           <div className="flex justify-between  items-center">
             <div className="w-2/3 space-y-3">

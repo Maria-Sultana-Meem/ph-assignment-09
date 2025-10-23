@@ -6,6 +6,7 @@ import WinterCare from '../components/WinterCare';
 import ExpertVets from '../components/ExpertVets';
 
 
+
 const Home = () => {
     const data= useLoaderData()
     const sixItem = data.slice(0, 6)
