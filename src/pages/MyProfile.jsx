@@ -1,36 +1,77 @@
-import React from 'react'
-import { toast } from 'react-toastify';
+import React, { useContext, useState } from 'react';
+import { AuthContext } from '../context/AuthContext';
+import toast from 'react-hot-toast';
 
 const MyProfile = () => {
-  const handleNotify = () => {
-    toast.success(" You’ll be notified when the profile is ready!", 
-      );
+  const {user, updateProfileFunc} = useContext(AuthContext)
+  const [editing, setEditing] = useState(false);
+  const [name, setName] = useState(user?.displayName || '');
+  const [photoURL, setPhotoURL] = useState(user?.photoURL || '');
+  const handleUpdate = async (e) => {
+    e.preventDefault();
+    try {
+      await updateProfileFunc(name, photoURL);
+      toast.success('Profile updated successfully!');
+      setEditing(false);
+    } catch (err) {
+      toast.error(err.message);
+    }
   };
-
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center text-center">
-      <h1 className="text-5xl md:text-6xl font-bold text-blue-600 animate-bounce drop-shadow-lg">
-         Profile is Coming Soon
-      </h1>
-
-      <p className="mt-5 text-lg  animate-pulse">
-        Stay tuned! We’re crafting something amazing for you ✨
-      </p>
-
-      <div className="mt-10">
-        <button
-          onClick={handleNotify}
-          className="btn btn-outline  "
+    <div className='  py-10 text-center space-y-5 px-6 border w-1/2 mx-auto mt-10 bg-gradient-to-b from-white to to-blue-600'>
+        <p className='text-4xl font-bold text-blue-700'>{user?.displayName}</p>
+        <p className='text-xl font-semibold text-gray-400'>{user?.email}</p>
+        <div className='flex justify-center '>
+          <img className='rounded-full' src={user?.photoURL || "https://via.placeholder.com/88"} alt="" />
+        </div>
+        {!editing ? (
+        <div className="flex justify-center">
+          <button
+            className="btn text-white bg-cyan-700"
+            onClick={() => setEditing(true)}
+          >
+            Update Profile
+          </button>
+        </div>
+      ):(
+        <form
+          onSubmit={handleUpdate}
+          className="flex flex-col items-center gap-3 mt-4"
         >
-          Notify Me
-        </button>
-      </div>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Enter new name"
+            className="input input-bordered w-64"
+          />
+          <input
+            type="text"
+            value={photoURL}
+            onChange={(e) => setPhotoURL(e.target.value)}
+            placeholder="Enter new photo URL"
+            className="input input-bordered w-64"
+          />
+          <div className="flex gap-2">
+            <button
+              type="submit"
+              className="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600 transition-colors"
+            >
+              Save
+            </button>
+            <button
+              type="button"
+              onClick={() => setEditing(false)}
+              className="bg-gray-400 text-white px-6 py-2 rounded hover:bg-gray-500 transition-colors"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      )}
 
-      <div className="absolute bottom-6 text-white text-sm ">
-        Developed by <span className="font-bold">Maria</span>
-      </div>
     </div>
   );
-}
+};
 
-export default MyProfile
+export default MyProfile;

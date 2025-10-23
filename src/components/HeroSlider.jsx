@@ -10,7 +10,7 @@ const HeroSlider = () => {
                     <p className='text-red-500 font-bold text-2xl'>Keep your pets warm, safe & healthy this winter with WarmPaws!</p>
                 </Marquee>
                 </div>
-            <div className="carousel w-full bg-gradient-to-r from-blue-100 to-blue-300 py-20 rounded-md">
+            <div className="carousel w-full bg-gradient-to-b from-white to-blue-600 py-20 rounded-md">
                
   <div id="slide1" className="carousel-item relative w-full h-[300px]">
      <div className='flex justify-between  items-center'>

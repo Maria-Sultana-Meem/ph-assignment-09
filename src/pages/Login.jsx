@@ -3,7 +3,7 @@ import { FaEye } from 'react-icons/fa'
 import { IoEyeOff } from 'react-icons/io5'
 import { Link, useLocation, useNavigate } from 'react-router'
 import { AuthContext } from '../context/AuthContext'
-import { toast } from 'react-toastify'
+import toast from 'react-hot-toast'
 
 
 const Login = () => {

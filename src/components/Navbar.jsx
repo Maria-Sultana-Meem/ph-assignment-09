@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { IoPawSharp } from "react-icons/io5";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../context/AuthContext";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
+
 
 const Navbar = () => {
   const { user, setUser ,signoutUserFunc} = useContext(AuthContext);
@@ -58,7 +59,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="bg-blue-100 shadow-sm to fixed w-full top-0 z-10">
+    <div className="bg-blue-200 shadow-sm to fixed w-full top-0 z-10">
       <div className="navbar   w-10/12 mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">

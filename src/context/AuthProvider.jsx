@@ -12,7 +12,7 @@ const googleProvider = new GoogleAuthProvider()
     const creatUserWithEmailAndPasswordFunc=(email,password)=>{
         return createUserWithEmailAndPassword(auth,email,password)
     }
-    
+    // update profile
      const updateProfileFunc = (displayName, photoURL) => {
     return updateProfile(auth.currentUser, {
       displayName,

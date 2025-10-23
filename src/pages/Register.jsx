@@ -3,13 +3,17 @@ import { FaEye } from 'react-icons/fa';
 import { IoEyeOff } from 'react-icons/io5';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../context/AuthContext';
-import { toast } from 'react-toastify';
+import toast from 'react-hot-toast';
+
 
 const Register = () => {
     const [show,setShow]=useState(false)
+    const [error,setError]=useState('')
+   
     
     const {creatUserWithEmailAndPasswordFunc,updateProfileFunc}= useContext(AuthContext)
     const navigate = useNavigate()
+     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
   const handleSignup=(e)=>{
   e.preventDefault()
@@ -18,16 +22,23 @@ const Register = () => {
     const email = e.target.email?.value;
     const password = e.target.password?.value;
      
+  if (!passwordRegex.test(password)) {
+    setError("Password must be at least 6 characters, include 1 uppercase and 1 lowercase letter.");
+    return;
+  }
    creatUserWithEmailAndPasswordFunc(email,password)
    .then(res=>{
+    console.log(res);
+    
      updateProfileFunc(displayName, photoURL)
      .then(res=>{
         console.log(res);
-        toast.success('Register succesful')
+        
+     toast.success('Register succesful')  
     
      })
    
-   navigate('/login')
+   navigate('/')
    
 
 
@@ -43,6 +54,8 @@ const Register = () => {
    
 
   };
+  
+   
 
 
     return (
@@ -102,7 +115,7 @@ const Register = () => {
               <button type="submit" className="bg-cyan-700 btn w-full text-white">
                 Sign Up
               </button>
-
+              <p className='text-red-700'>{error}</p>
               <div className="text-center mt-3">
                 <p className="text-sm">
                   Already have an account?{" "}
@@ -113,8 +126,10 @@ const Register = () => {
                     Sign in
                   </Link>
                 </p>
+
               </div>
             </form>
+            
       </div>
     </div>
         </div>

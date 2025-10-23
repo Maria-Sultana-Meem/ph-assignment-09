@@ -1,7 +1,8 @@
 import React from "react";
+import toast from "react-hot-toast";
 import { FaStarHalfAlt } from "react-icons/fa";
 import { useLoaderData, useParams } from "react-router";
-import { toast } from "react-toastify";
+
 
 const CardDetails = () => {
   const { serviceId } = useParams();
