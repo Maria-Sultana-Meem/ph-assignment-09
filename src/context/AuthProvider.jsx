@@ -21,24 +21,24 @@ const googleProvider = new GoogleAuthProvider()
   };
 //   email password sign in
    const signInWithEmailAndPasswordFunc = (email, password) => {
-   setLoading(true);
+   setLoading(false)
     return signInWithEmailAndPassword(auth, email, password);
   };
     // google sign in 
 
     const googleSignInFunc =()=>{
-      setLoading(true);
+      setLoading(false);
     return signInWithPopup(auth,googleProvider)
 
     }
     // forgot password
     const sendPassResetEmailFunc = (email) => {
-   setLoading(true);
+   setLoading(false);
     return sendPasswordResetEmail(auth, email);
   };
     // log out 
     const signoutUserFunc = () => {
-      setLoading(true);
+      setLoading(false);
    
     return signOut(auth);
   };
@@ -59,6 +59,7 @@ const googleProvider = new GoogleAuthProvider()
     const unsubscribe = onAuthStateChanged(auth, (currUser) => {
       console.log(currUser);
       setUser(currUser);
+      setLoading(false);
       ;
     });
 

@@ -8,7 +8,7 @@ import toast from 'react-hot-toast'
 
 const Login = () => {
     const [show,setShow]=useState(false)
-    const {signInWithEmailAndPasswordFunc,user,setUser,googleSignInFunc,sendPassResetEmailFunc,setLoading}= useContext(AuthContext)
+    const {signInWithEmailAndPasswordFunc,user,setUser,googleSignInFunc,sendPassResetEmailFunc}= useContext(AuthContext)
     const location = useLocation();
   const from = location.state || "/";
   const navigate = useNavigate();
@@ -23,13 +23,14 @@ const Login = () => {
 
     const handleSignin=(e)=>{
         e.preventDefault()
+       
         const email = e.target.email?.value;
     const password = e.target.password?.value;
     
           signInWithEmailAndPasswordFunc(email,password)
           .then(res=>{
             console.log(res.user);
-            setLoading(false)
+            
             setUser(res.user);
         toast.success("Signin successful");
          navigate(from);
@@ -37,14 +38,21 @@ const Login = () => {
             
           })
           .catch((e) => {
+            console.log(e.code);
+            
       if (e.code === "auth/user-not-found") {
         toast.error("No user found! Please register first.");
       } 
+      else if(e.code==="auth/invalid-email"){
+        toast.error("Enter a valid password")
+      }
       else if (e.code === "auth/invalid-credential") {
        
-        if (email && password) {
-          toast.error("No user found! Please register first.");
-        } else {
+      if (email && password) {
+          toast.error("No user found! Please register first");
+        } 
+       
+        else {
           toast.error("Invalid email or password!");
         }
       } 
@@ -63,7 +71,7 @@ const Login = () => {
      
        sendPassResetEmailFunc(email)
        .then(() => {
-        setLoading(false)
+        
         toast.success("Check your email to reset password");
       })
       .catch((e) => {

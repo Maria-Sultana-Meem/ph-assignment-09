@@ -24,7 +24,7 @@ const MyProfile = () => {
     
   };
   return (
-    <div className='  py-10 text-center space-y-5 px-6 border w-1/2 mx-auto mt-10 bg-gradient-to-b from-white to to-blue-600'>
+    <div className='  py-10 text-center space-y-5 px-6 border md:w-1/2 mx-auto mt-10 bg-gradient-to-b from-white to to-blue-600'>
         <p className='text-4xl font-bold text-blue-700'>{user?.displayName}</p>
         <p className='text-xl font-semibold text-gray-400'>{user?.email}</p>
         <div className='flex justify-center '>
