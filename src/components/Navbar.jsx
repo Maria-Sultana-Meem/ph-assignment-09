@@ -92,8 +92,8 @@ const Navbar = () => {
             to="/"
             className=" btn-ghost text-xl flex justify-between items-center gap-2"
           >
-            <IoPawSharp className="text-red-600" size={50} />
-            <span className="font-bold text-2xl text-cyan-600"> WarmPaws</span>
+            <IoPawSharp className="text-red-600 hidden md:block" size={50} />
+            <span className="font-bold text-2xl  text-cyan-600"> WarmPaws</span>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
