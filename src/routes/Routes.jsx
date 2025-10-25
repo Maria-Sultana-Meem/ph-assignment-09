@@ -7,11 +7,13 @@ import CardDetails from "../pages/CardDetails";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
  {
     path:'/',
     Component:MainLayout,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
     {
          path:'/',
