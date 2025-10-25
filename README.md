@@ -7,7 +7,7 @@ This project is built to provide a simple and secure user authentication system 
 
 
 ## Live URL
-[Live Project Link Here]((https://assignment-09-by-meem.netlify.app/))
+Live Project Link Here: (https://assignment-09-by-meem.netlify.app/)
 
 ## Key Features
 - Responsive design for mobile, tablet, and desktop
