@@ -4,6 +4,7 @@ import { Link, useLoaderData } from 'react-router';
 import Card from '../components/Card';
 import WinterCare from '../components/WinterCare';
 import ExpertVets from '../components/ExpertVets';
+import ExtraSectionReviews from '../components/ExtraSectionReviews';
 
 
 
@@ -23,6 +24,7 @@ const Home = () => {
               <div className='flex justify-center'><Link to='/services' className='btn bg-cyan-700 text-white'>See More</Link></div>
             <WinterCare></WinterCare>
             <ExpertVets></ExpertVets>
+            <ExtraSectionReviews></ExtraSectionReviews>
             
         </div>
     );

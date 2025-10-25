@@ -110,7 +110,7 @@ const Navbar = () => {
               /> : null
           }
           <div className="absolute bottom-full top-5  right-0  opacity-0 group-hover:opacity-100 transition-opacity  text-blue-900 text-sm px-2 py-1 rounded">
-                  {user?.email}
+                  {user?.displayName}
                 </div>
           </div>
           
