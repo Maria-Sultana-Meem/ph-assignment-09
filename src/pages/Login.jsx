@@ -1,13 +1,12 @@
-import React, { useContext,  useEffect,  useRef,  useState } from 'react'
-import { FaEye } from 'react-icons/fa'
-import { IoEyeOff } from 'react-icons/io5'
+import React, { useContext,  useEffect,  useRef, } from 'react'
+
 import { Link, useLocation, useNavigate } from 'react-router'
 import { AuthContext } from '../context/AuthContext'
 import toast from 'react-hot-toast'
 
 
 const Login = () => {
-    const [show,setShow]=useState(false)
+
     const {signInWithEmailAndPasswordFunc,user,setUser,googleSignInFunc,sendPassResetEmailFunc}= useContext(AuthContext)
     const location = useLocation();
   const from = location.state || "/";
@@ -117,20 +116,15 @@ const Login = () => {
                 />
               </div>
 
-              <div className="relative">
+              <div className="">
                 <label className="block text-sm mb-1">Password</label>
                 <input
-                  type={show ? "text" : "password"}
+                  type="text"
                   name="password"
                   placeholder="••••••••"
                   className="input input-bordered w-full bg-white/20 "
                 />
-                <span
-                  onClick={() => setShow(!show)}
-                  className="absolute right-[8px] top-[36px] cursor-pointer z-50"
-                >
-                  {show ? <FaEye /> : <IoEyeOff />}
-                </span>
+                
               </div>
 
               <button
