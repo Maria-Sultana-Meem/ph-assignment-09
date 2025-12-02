@@ -34,7 +34,7 @@ const router = createBrowserRouter([
     ,
     {
          path:'/cardDetails/:serviceId',
-         element:<PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
+         element:<CardDetails></CardDetails>,
          loader:()=>fetch('/data.json')
     },
     {

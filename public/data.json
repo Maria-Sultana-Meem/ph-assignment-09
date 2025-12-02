@@ -2,7 +2,7 @@
   {
     "serviceId": 1,
     "serviceName": "Winter Coat Fitting for Dogs",
-    "providerName": "PawCare Studio",
+    "providerName": "PawCare ",
     "providerEmail": "info@pawcare.com",
     "price": 25,
     "rating": 4.9,
@@ -13,8 +13,8 @@
   },
   {
     "serviceId": 2,
-    "serviceName": "Winter Grooming & Paw Treatment",
-    "providerName": "CozyPets Grooming",
+    "serviceName": "Winter Grooming ",
+    "providerName": " Grooming",
     "providerEmail": "hello@cozypets.com",
     "price": 30,
     "rating": 4.8,
