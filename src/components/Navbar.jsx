@@ -18,32 +18,48 @@ const Navbar = () => {
         toast.error(e.message);
       });
   };
-  const links = (
-    <>
+ const links = (
+  <>
+    <li>
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+          isActive
+            ? "text-white bg-cyan-600 px-4 py-2 cursor-pointer hover:py-3 hover:px-6"
+            : "text-black"
+        }
+      >
+        Home
+      </NavLink>
+    </li>
+
+    <li>
+      <NavLink
+        to="/services"
+        className={({ isActive }) =>
+          isActive
+            ? "text-white bg-cyan-600 px-4 py-2 cursor-pointer hover:py-3 hover:px-6"
+            : "text-black"
+        }
+      >
+        Services
+      </NavLink>
+    </li>
+     
       <li>
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            isActive
-              ? "text-white bg-cyan-600 px-4 py-2 cursor-pointer hover:py-3 hover:px-6"
-              : "text-black"
-          }
-        >
-          Home
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/services"
-          className={({ isActive }) =>
-            isActive
-              ? "text-white bg-cyan-600 px-4 py-2 cursor-pointer hover:py-3 hover:px-6"
-              : "text-black"
-          }
-        >
-          Services
-        </NavLink>
-      </li>
+      <NavLink
+        to="/about"
+        className={({ isActive }) =>
+          isActive
+            ? "text-white bg-cyan-600 px-4 py-2 cursor-pointer hover:py-3 hover:px-6"
+            : "text-black"
+        }
+      >
+        About Us
+      </NavLink>
+    </li>
+
+    {user && (
       <li>
         <NavLink
           to="/myProfile"
@@ -56,7 +72,9 @@ const Navbar = () => {
           My Profile
         </NavLink>
       </li>
-    </>
+    )}
+  </>
+
   );
   return (
     <div className="">

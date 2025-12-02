@@ -20,7 +20,7 @@ const HeroSlider = () => {
         <div id="slide1" className="carousel-item relative w-full h-[300px]">
           <div className="flex justify-between  items-center">
             <div className="w-2/3 space-y-3">
-              <p className="font-bold text-blue-700 md:text-5xl ml-20 animate__animated animate__heartBeat animate__infinite	infinite animate__slower	3s">
+              <p className="font-bold text-blue-700 md:text-5xl ml-20">
                 Keep Your Pets Warm This Winter!
               </p>
               <p className="  ml-20 text-gray-100">
@@ -47,7 +47,7 @@ const HeroSlider = () => {
         <div id="slide2" className="carousel-item relative w-full h-[300px]">
           <div className="flex justify-between  items-center">
             <div className="w-2/3 space-y-3">
-              <p className="font-bold text-blue-700 md:text-5xl ml-20 animate__animated animate__heartBeat animate__infinite	infinite animate__slower	3s">
+              <p className="font-bold text-blue-700 md:text-5xl ml-20 ">
                 Winter Grooming & Paw Treatments
               </p>
               <p className=" text-gray-100 ml-20">
@@ -74,7 +74,7 @@ const HeroSlider = () => {
         <div id="slide3" className="carousel-item relative w-full h-[300px]">
           <div className="flex justify-between  items-center">
             <div className="w-2/3 space-y-3">
-              <p className="font-bold text-blue-700 md:text-4xl ml-20 animate__animated animate__heartBeat animate__infinite	infinite animate__slower	3s">
+              <p className="font-bold text-blue-700 md:text-4xl ml-20 ">
                 Protect your pets' paws and fur during chilly weather.
               </p>
               <p className="text-gray-100 ml-20">
@@ -101,7 +101,7 @@ const HeroSlider = () => {
         <div id="slide4" className="carousel-item relative w-full h-[300px]">
           <div className="flex justify-between  items-center">
             <div className="w-2/3 space-y-3">
-              <p className="font-bold text-blue-700 md:text-6xl ml-20 animate__animated animate__heartBeat animate__infinite	infinite animate__slower	3s">
+              <p className="font-bold text-blue-700 md:text-6xl ml-20 ">
                 Expert Vets & Winter Tips
               </p>
               <p className="text-gray-100 ml-20">
